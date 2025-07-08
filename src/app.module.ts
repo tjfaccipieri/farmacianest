@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CategoriaModule } from './categoria/categoria.module';
 import { Categoria } from './categoria/entities/categoria.entity';
+import { Produto } from './produto/entities/produto.entity';
+import { ProdutoModule } from './produto/produto.module';
 
 @Module({
   imports: [
@@ -14,10 +16,11 @@ import { Categoria } from './categoria/entities/categoria.entity';
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASS,
       database: process.env.DATABASE_NAME,
-      entities: [Categoria],
+      entities: [Categoria, Produto],
       synchronize: true,
     }),
     CategoriaModule,
+    ProdutoModule,
   ],
   controllers: [],
   providers: [],
