@@ -10,8 +10,10 @@ import {
 } from '@nestjs/common';
 import { Categoria } from '../entities/categoria.entity';
 import { CategoriaService } from '../services/categoria.service';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('/categorias')
+@ApiTags('Categorias')
 export class CategoriaController {
   constructor(private readonly categoriaService: CategoriaService) {}
 
