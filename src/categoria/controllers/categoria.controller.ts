@@ -42,7 +42,7 @@ export class CategoriaController {
     return this.categoriaService.update(categoria);
   }
 
-  @Delete()
+  @Delete('/:id')
   delete(@Param('id', ParseIntPipe) id: number) {
     return this.categoriaService.delete(id);
   }
